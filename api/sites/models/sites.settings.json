@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sites",
+  "info": {
+    "name": "sites",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
+    },
+    "city": {
+      "type": "string"
+    },
+    "familyFriendly": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "easyAccess": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "amenitiesNearby": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "sites"
+    },
+    "booking": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    }
+  }
+}
