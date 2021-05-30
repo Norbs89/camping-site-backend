@@ -10,6 +10,14 @@
     },
     {
       "method": "GET",
+      "path": "/sites/me",
+      "handler": "sites.me",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
       "path": "/sites/count",
       "handler": "sites.count",
       "config": {
